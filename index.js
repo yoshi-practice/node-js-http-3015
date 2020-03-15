@@ -23,6 +23,13 @@ const server = http
             })
           );
         } else if (req.url === "/enquetes/rice-bread") {
+          res.write(
+            pug.renderFile("./form.pug", {
+              path: req.url,
+              firstItem: "ごはん",
+              secondItem: "パン"
+            })
+          );
         }
         res.end();
         break;
